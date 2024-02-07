@@ -55,7 +55,7 @@ COPY --from=python-build-stage /usr/src/app/wheels /wheels
 RUN pip install --no-cache /wheels/* \
   && rm -rf /wheels
 
-COPY ./compose/local/docs/start /start-docs
+COPY ./start_docs /start-docs
 RUN sed -i 's/\r$//g' /start-docs
 RUN chmod +x /start-docs
 
